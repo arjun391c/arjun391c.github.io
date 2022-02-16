@@ -680,6 +680,7 @@ body.light-theme {
   display: flex;
   align-items: center;
   column-gap: .25rem;
+  cursor: pointer;
 }
 
 .work__button:hover .work__icon {
@@ -694,6 +695,20 @@ body.light-theme {
 .active-work {
   background-color: var(--first-color);
   color: var(--body-color);
+}
+
+.iframe__item {
+  width: 100%;
+  height: 50vh;
+  border: 1px solid var(--first-color);
+  border-radius: 1em;
+  margin-bottom: 1em;
+}
+
+.preview_img {
+  /* width: auto; */
+  height: 50vh;
+  margin-bottom: 1.5em;
 }
 
 /*=============== TESTIMONIAL ===============*/
@@ -934,6 +949,12 @@ body.light-theme {
   .services__modal-content {
     width: 500px;
     padding: 4.5rem 2.5rem 2.5rem;
+    overflow-y: auto;
+    max-height: 90vh;
+  }
+
+  .services__modal-content::-webkit-scrollbar {
+    display: none;
   }
 
   .services__modal-description {

@@ -7,9 +7,9 @@ function scrollHeader(){
 window.addEventListener('scroll', scrollHeader)
 
 /*=============== SERVICES MODAL ===============*/
-const modalViews = document.querySelectorAll('.services__modal'),
-      modalBtns = document.querySelectorAll('.services__button'),
-      modalClose = document.querySelectorAll('.services__modal-close')
+const modalViews = document.querySelectorAll('#services__modal'),
+      modalBtns = document.querySelectorAll('#services__button'),
+      modalClose = document.querySelectorAll('#services__modal-close')
 
 let modal = function(modalClick) {
     modalViews[modalClick].classList.add('active-modal')
@@ -28,6 +28,30 @@ modalClose.forEach((mc) => {
         })
     })
 })
+
+/* ======================== WORKS MODAL ==================== */
+const modalPortfolioViews = document.querySelectorAll('#portfolio__modal'),
+      modalPortfolioBtns = document.querySelectorAll('#portfolio__button'),
+      modalPortfolioClose = document.querySelectorAll('#portfolio__modal-close')
+
+let modalPortfolio = function(modalClick) {
+    modalPortfolioViews[modalClick].classList.add('active-modal')
+}
+
+modalPortfolioBtns.forEach((mb, i) => {
+    mb.addEventListener('click', () => {
+        modalPortfolio(i)
+    })
+})
+
+modalPortfolioClose.forEach((mc) => {
+    mc.addEventListener('click', () => {
+        modalPortfolioViews.forEach(mv => {
+            mv.classList.remove('active-modal')
+        })
+    })
+})
+
 
 /*=============== MIXITUP FILTER PORTFOLIO ===============*/
 let mixerPortfolio = mixitup('.work__container', {
@@ -50,7 +74,26 @@ function activeWork() {
 linkWork.forEach(l => l.addEventListener('click', activeWork))
 
 /*=============== SWIPER TESTIMONIAL ===============*/
-let swiperTestimonial = new Swiper('.testimonial__container', {
+// let swiperTestimonial = new Swiper('.testimonial__container', {
+//     spaceBetween: 24,
+//     loop: true,
+//     grabCursor: true,
+//     pagination: {
+//         el: '.swiper-pagination',
+//         clickable: true
+//     },
+//     breakpoints: {
+//         576: {
+//             slidesPerView: 2,
+//         },
+//         768: {
+//             slidesPerView: 2,
+//             spaceBetween: 48
+//         },
+//     }
+// })
+
+let swiperItem = new Swiper('.swiper__container', {
     spaceBetween: 24,
     loop: true,
     grabCursor: true,
@@ -59,6 +102,9 @@ let swiperTestimonial = new Swiper('.testimonial__container', {
         clickable: true
     },
     breakpoints: {
+        340: {
+            slidesPerView: 1
+        },
         576: {
             slidesPerView: 2,
         },
