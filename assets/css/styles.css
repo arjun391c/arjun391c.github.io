@@ -583,6 +583,12 @@ body.light-theme {
   background-color: var(--body-color);
   padding: 4.5rem 1.5rem 2.5rem;
   border-radius: 1.5rem;
+  overflow-y: auto;
+  max-height: 90vh;
+}
+
+.services__modal-content::-webkit-scrollbar {
+  display: none;
 }
 
 .services__modal-title,
@@ -710,6 +716,7 @@ body.light-theme {
   height: 50vh;
   margin-bottom: 1.5em;
 }
+
 
 /*=============== TESTIMONIAL ===============*/
 .testimonial__card {
@@ -915,6 +922,18 @@ body.light-theme {
   }
 }
 
+@media screen and (max-width: 576px) {
+  
+  #portfolio__modal {
+    display: unset;
+  }
+
+  .swiper-slide {
+
+    display: flex;
+    justify-content: center;
+  }
+}
 /* For medium devices */
 @media screen and (min-width: 576px) {
   .nav__menu {
@@ -949,12 +968,6 @@ body.light-theme {
   .services__modal-content {
     width: 500px;
     padding: 4.5rem 2.5rem 2.5rem;
-    overflow-y: auto;
-    max-height: 90vh;
-  }
-
-  .services__modal-content::-webkit-scrollbar {
-    display: none;
   }
 
   .services__modal-description {
